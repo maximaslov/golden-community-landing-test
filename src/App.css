@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 400;
+}
+
 .mainBackground {
   display: flex;
   justify-content: center;
@@ -21,7 +26,7 @@
   width: 1944px;
   height: 1944px;
   z-index: -4;
-  margin-top: 1700px;
+  margin-top: 1500px;
   transform: rotate(-90deg);
 }
 
