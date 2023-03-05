@@ -2,7 +2,7 @@ import React from 'react';
 
 const InfoBlock = () => {
     return (
-        <p>Hello</p>
+        <h1>Hello</h1>
     )
 }
 
