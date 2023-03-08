@@ -1,0 +1,78 @@
+.wrapper{
+    width: 50%;
+  
+    margin: 200px 5% 217px 37%;
+}
+h1 {
+    color: #ffffff;
+}
+.info{
+    margin-top: 100px;
+
+}
+.menuItems {
+    width: 432px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+.menuItem a {
+    color: #FFFFFF;
+    font-family: 'Jura';
+    font-style: normal;
+    padding-bottom: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: default;
+}
+
+.menuItem a:hover {
+    border-bottom: 1px solid #E3D18F;
+  
+}
+
+.menuItem a:active {
+    border-bottom: 1px solid #E3D18F;
+  
+}
+
+.firstBlock, .secondBlock, .thirdBlock{
+    color: #FFFFFF;
+    width: 100%;
+
+    margin-top: 64px;
+   
+}
+
+.firstBlock h2,
+.secondBlock h2,
+.thirdBlock h2 {
+    font-family: 'Jura';
+    font-style: normal;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 52px;
+    margin-bottom: 24px;
+}
+
+.firstBlock p,
+.secondBlock p,
+.thirdBlock p {
+
+        font-family: Jura;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 30px;
+        margin-bottom: 72px;
+    
+}
+
+@media (max-width: 870px) {
+    .wrapper {
+        width: 100%;
+        margin: 157px 16px 88px 108px;
+      
+    }
+
+   
+}
