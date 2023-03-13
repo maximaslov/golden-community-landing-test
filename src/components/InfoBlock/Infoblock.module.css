@@ -1,0 +1,151 @@
+.wrapper{
+    width: 50%;
+    margin: 200px 5% 217px 37%;
+}
+.wrapperTitel{
+    display: flex;
+    align-items: flex-end;
+}
+.wrapperTitel h2, .wrapperTitel h3{
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+.wrapperTitel h2{
+    font-size: 32px;
+    line-height: 40px;
+    margin-right: 16px;
+}
+.wrapperTitel h3 {
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.info{
+    margin-top: 100px;
+}
+
+.menuItems {
+    width: 432px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+.menuItem a, .wrapperTitle h3{
+    color: #FFFFFF;
+    font-family: 'Jura';
+    font-style: normal;
+    font-weight: 500;
+}
+
+.menuItem a {
+    font-size: 18px;
+    padding-bottom: 8px;
+    cursor: default;
+}
+
+.menuItem a:hover {
+    border-bottom: 1px solid #E3D18F;
+}
+
+.menuItem a:active {
+    border-bottom: 1px solid #E3D18F;
+}
+
+.firstBlock, .secondBlock, .thirdBlock{
+    color: #FFFFFF;
+    width: 100%;
+    margin-top: 64px;
+}
+
+.firstBlock h2,
+.secondBlock h2,
+.thirdBlock h2 {
+    font-family: 'Jura';
+    font-style: normal;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 52px;
+    margin-bottom: 24px;
+}
+
+.firstBlock p,
+.secondBlock p,
+.thirdBlock p {
+        font-family: 'Jura';
+        font-style: normal;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 30px;
+        margin-bottom: 72px;
+    
+}
+
+
+
+
+@media (max-width: 870px) {
+    .wrapperTitel h2, .wrapperTitel h3 {
+        font-size: 14px;
+        line-height: 21px;
+        }
+    .wrapperTitel h3 {
+        font-family: 'Jura';
+    }
+    .firstBlock, .secondBlock, .thirdBlock {
+      margin-top: 0px;
+        }
+    .wrapper {
+        position: relative;
+        width: 70%;
+        margin: 157px 16px 88px 108px;
+      
+    }
+
+    .firstBlock h2,
+    .secondBlock h2,
+    .thirdBlock h2 {
+        font-size: 24px;
+        line-height: 36px;
+        margin-bottom: 16px;
+    }
+    .firstBlock p,
+    .secondBlock p,
+    .thirdBlock p {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 48px;
+    }
+    .block {
+        position: absolute;
+        margin-top: 40px;
+    }
+
+    .wrapperMenuButtons {
+        margin-top: 40px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .wrapperTitle {
+        display: flex;
+        align-items: center;
+        width: 90px;
+        justify-content: center;
+    }
+
+    .wrapperTitle h3 {
+        font-size: 12px;
+        position: absolute;
+    }
+    .btnArrow {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+   
+}
