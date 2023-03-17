@@ -53,15 +53,13 @@
     border-bottom: 1px solid #E3D18F;
 }
 
-.firstBlock, .secondBlock, .thirdBlock{
+.Block {
     color: #FFFFFF;
     width: 100%;
     margin-top: 64px;
 }
 
-.firstBlock h2,
-.secondBlock h2,
-.thirdBlock h2 {
+.Block h2 {
     font-family: 'Jura';
     font-style: normal;
     font-size: 44px;
@@ -70,9 +68,7 @@
     margin-bottom: 24px;
 }
 
-.firstBlock p,
-.secondBlock p,
-.thirdBlock p {
+.Block p {
         font-family: 'Jura';
         font-style: normal;
         font-size: 20px;
@@ -93,9 +89,10 @@
     .wrapperTitel h3 {
         font-family: 'Jura';
     }
-    .firstBlock, .secondBlock, .thirdBlock {
-      margin-top: 0px;
-        }
+    .Block {
+    position: absolute;
+        margin-top: 40px;
+    }
     .wrapper {
         position: relative;
         width: 70%;
@@ -103,16 +100,12 @@
       
     }
 
-    .firstBlock h2,
-    .secondBlock h2,
-    .thirdBlock h2 {
+   .Block h2 {
         font-size: 24px;
         line-height: 36px;
         margin-bottom: 16px;
     }
-    .firstBlock p,
-    .secondBlock p,
-    .thirdBlock p {
+    .Block p {
         font-size: 16px;
         line-height: 24px;
         margin-bottom: 48px;
