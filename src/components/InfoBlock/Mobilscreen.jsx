@@ -1,29 +1,37 @@
-import React, { useState } from 'react';
+import React, { useContext, useState }from 'react';
 import styles from "./Infoblock.module.css";
 import arrowLeft from "../../images/Arrow_left.svg";
 import arrowRight from "../../images/Arrow_right.svg";
-import About from './About';
-import Team from './Team';
-import News from './News';
+import { AppContext } from '../../context/Context'
+import Button from "../Button/Button";
+
 
 
 
 const MobilScreen = () => {
-const [index, setIndex] = useState(0); 
-let length = 3;
+    const data = useContext(AppContext);
+    const [index, setIndex] = useState(0); 
+    let length = 3;
 
-const handlePrevious = () => {
-    const newIndex = index - 1;
-    setIndex(newIndex < 0 ? length - 1 : newIndex);
-    console.log('clicked');
-};
+    const handlePrevious = () => {
+        const newIndex = index - 1;
+        setIndex(newIndex < 0 ? length - 1 : newIndex);
+    };
 
-const handleNext = () => {
-    const newIndex = index + 1;
-    setIndex(newIndex >= length ? 0 : newIndex);
-    console.log('clicked');
-};
-
+    const handleNext = () => {
+        const newIndex = index + 1;
+        setIndex(newIndex >= length ? 0 : newIndex); 
+    };
+   
+    const Block = () => {
+        return (
+                <article className={styles.Block}>
+                    <h2>{data.infoBlock[index].mainText}</h2>
+                    <p>{data.infoBlock[index].text}</p>
+                    <Button text={data.infoBlock[index].textBTN} />
+                </article>
+            )
+        }
 
     return (
         <div >
@@ -32,36 +40,20 @@ const handleNext = () => {
             </div>
             <div className={styles.wrapperMenuButtons}>
                 <button onClick={handlePrevious} className={styles.btnArrow}>
-                <img src={arrowLeft} alt="" />
+                <img src={arrowLeft} alt="arrow left" />
                 </button>
                 
-                <div className={styles.wrapperTitle}>
-                    <h3 style={{
-                    visibility: index === 0? '':'hidden',}} >ПРО WEB3</h3>
-                    <h3 style={{
-                    visibility: index === 1? '':'hidden',}}>КОМАНДА</h3>
-                    <h3 style={{
-                        visibility: index === 2 ? '' : 'hidden',}}>НОВИНИ</h3>
-                </div>
+                <nav className={styles.wrapperTitle}>
+                    <h3>{data.infoBlock[index].title}</h3>
+                </nav>
                 <button onClick={handleNext}className={styles.btnArrow} >
-                <img src={arrowRight} alt="" />
+                <img src={arrowRight} alt="arrow right" />
                 </button>
             </div>
 
-            <div style={{
-            visibility: index === 0? '':'hidden',}} className={styles.block}>
-            <About  />
-            </div>
-            <div  style={{
-            visibility: index === 1? '':'hidden',}} className={styles.block}>
-            <Team />
-            </div>
-            <div  style={{
-            visibility: index === 2? '':'hidden',}}  className={styles.block}>
-            <News />
-            </div>
+            <Block/>
 
-      </div>
+        </div>
     )
 }
 
