@@ -9,29 +9,8 @@ const Context = (props) => {
     y: 0,
     rotate: 0,
   });
-  const [isInfoBlockShow, setInfoBlockShow] = useState(true);
 
-  useEffect(() => {
-    console.log("use effect");
-    const handleScroll = () => {
-      if (window.scrollY >= 250) {
-        console.log(`User has scrolled ${window.scrollY} pixels from the top.`);
-        setAnimate({
-          x: -870,
-          y: -650,
-          rotate: 90,
-        });
-        setInfoBlockShow(true);
-      }
-      if (window.scrollY < 250) {
-        console.log(`User has scrolled ${window.scrollY} pixels to the top.`);
-        setAnimate({ x: 0, y: 0, rotate: 0 });
-        setInfoBlockShow(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const [isInfoBlockShow, setInfoBlockShow] = useState(false);
   const [infoBlock, setInfoBlock] = useState([
     {
       id: 1,
@@ -77,9 +56,41 @@ const Context = (props) => {
     },
   ]);
 
+  useEffect(() => {
+    console.log(isInfoBlockShow)
+    const handleScroll = () => {
+      if (window.scrollY >= 250) {
+        console.log(`Пользователь скроллит вниз`)
+        setAnimate({
+          x: -870,
+          y: -650,
+          rotate: 90,
+        })
+
+        // setTimeout(() => {
+        //   setInfoBlockShow(true)
+        // }, 1800);
+        setInfoBlockShow(true)
+      }
+    
+      if (window.scrollY < 250) {
+        console.log("Пользователь скроллит вверх")
+        console.log(isInfoBlockShow)
+        setAnimate({ x: 0, y: 0, rotate: 0 });
+        // setTimeout(() => {
+        //   setInfoBlockShow(false)
+        // }, 1800);
+        setInfoBlockShow(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const value = {
     animate,
     isInfoBlockShow,
+    setInfoBlockShow,
     infoBlock,
   };
 

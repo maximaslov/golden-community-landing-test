@@ -1,7 +1,9 @@
 .main {
     border: solid 0.1px rgba(0, 0, 0, 0);
-    height: 2000px;
     position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
+    height: 100vw;
 }
 
 .mainTitle {

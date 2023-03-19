@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import styles from "./BackgroundImage.module.css";
 import Background from "../../images/main-planet.jpg";
 import { motion } from "framer-motion";
@@ -7,36 +7,18 @@ import { AppContext } from '../../context/Context';
 const BackgroundImage = () => {
 
   const data = useContext(AppContext);
-  console.log(data)
-  // const {animate} = useShowSection();
-  // const [animate, setAnimate] = useState({
-  //   x: 0,
-  //   y: 0,
-  //   rotate: 0,
-  // });
 
   // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (window.scrollY >= 250) {
-  //       console.log(`User has scrolled ${window.scrollY} pixels from the top.`);
-  //       setAnimate({
-  //         x: -870,
-  //         y: -650,
-  //         rotate: 90,
-  //       });
-  //       //cghznmf
-  //       //dffdfs
-  //       //hdisuhuhh
-  //     }
-  //     if (window.scrollY < 250) {
-  //       console.log(`User has scrolled ${window.scrollY} pixels to the top.`);
-  //       setAnimate({ x: 0, y: 0, rotate: 0 });
-        
-  //     }
-  //   };
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
+  //   if(data.animate.rotate === 90) {
+  //     setTimeout(() => {
+  //       data.setInfoBlockShow(true)
+  //       console.log('усановили тру')
+  //     }, 1500);
+  //   } else (
+  //     data.setInfoBlockShow(false)
+  //   )
+  // },[data.animate])
+  
 
   return (
     <div className={styles.mainBackground}>
