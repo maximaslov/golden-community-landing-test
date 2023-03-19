@@ -6,12 +6,10 @@ import { AppContext } from '../../context/Context'
 import Button from "../Button/Button";
 
 
-
-
 const MobilScreen = () => {
     const data = useContext(AppContext);
     const [index, setIndex] = useState(0); 
-    let length = 3;
+    let length = data.infoBlock.length;
 
     const handlePrevious = () => {
         const newIndex = index - 1;
