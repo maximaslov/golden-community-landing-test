@@ -1,5 +1,4 @@
 import React, { useState, createContext } from "react";
-import { useEffect } from "react";
 
 export const AppContext = createContext();
 
@@ -11,6 +10,8 @@ const Context = (props) => {
   });
 
   const [isInfoBlockShow, setInfoBlockShow] = useState(false);
+  const [isProjectsBlockShow, setProjectsBlockShow] = useState(false);
+  const [isMainTitleShow, setMainTitleShow]= useState(true);
   const [infoBlock, setInfoBlock] = useState([
     {
       id: 1,
@@ -56,42 +57,42 @@ const Context = (props) => {
     },
   ]);
 
-  useEffect(() => {
-    console.log(isInfoBlockShow)
-    const handleScroll = () => {
-      if (window.scrollY >= 250) {
-        console.log(`Пользователь скроллит вниз`)
-        setAnimate({
-          x: -870,
-          y: -650,
-          rotate: 90,
-        })
+  const showScreen1 = () => {
+    setAnimate({ x: 0, y: 0, rotate: 0 });
+    setInfoBlockShow(false);
+    setMainTitleShow(true);
+  }
 
-        // setTimeout(() => {
-        //   setInfoBlockShow(true)
-        // }, 1800);
-        setInfoBlockShow(true)
-      }
-    
-      if (window.scrollY < 250) {
-        console.log("Пользователь скроллит вверх")
-        console.log(isInfoBlockShow)
-        setAnimate({ x: 0, y: 0, rotate: 0 });
-        // setTimeout(() => {
-        //   setInfoBlockShow(false)
-        // }, 1800);
-        setInfoBlockShow(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const showScreen2 = () => {
+    setAnimate({
+      x: -870,
+      y: -650,
+      rotate: 90,
+    });
+    setInfoBlockShow(true);
+    setProjectsBlockShow(false);
+    setMainTitleShow(false);
+  }
+
+  const showScreen3 = () => {
+    setAnimate({ x: 1100, y: -650, rotate: 180 });
+    setProjectsBlockShow(true);
+    setInfoBlockShow(false);
+  }
 
   const value = {
     animate,
+    setAnimate,
     isInfoBlockShow,
     setInfoBlockShow,
     infoBlock,
+    isProjectsBlockShow,
+    setProjectsBlockShow,
+    isMainTitleShow,
+    setMainTitleShow,
+    showScreen1,
+    showScreen2,
+    showScreen3
   };
 
   return (

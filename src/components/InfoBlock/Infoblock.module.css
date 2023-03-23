@@ -1,12 +1,17 @@
 .wrapper{
-    width: 50%;
-    margin: 200px 5% 217px 37%;
+    /* width: 50%;
+    margin: 150px 5% 217px 37%; */
+    margin: 150px 0 0 400px;
+    max-width: 840px;
+    width: 100%;
+    animation: show 2s ease;
+    opacity: 1;
 }
 .wrapperTitel{
     display: flex;
     align-items: flex-end;
 }
-.wrapperTitel h2, .wrapperTitel h3{
+.wrapperTitel h2 {
     font-family: 'Orbitron';
     font-style: normal;
     font-weight: 400;
@@ -20,6 +25,10 @@
 .wrapperTitel h3 {
     font-size: 16px;
     line-height: 28px;
+    font-family: 'Jura';
+    font-style: normal;
+    font-weight: 400;
+    color: #FFFFFF;
 }
 
 .info{
@@ -43,6 +52,7 @@
     font-size: 18px;
     padding-bottom: 8px;
     cursor: default;
+    transition: all ease 0.5s;
 }
 
 .menuItem a:hover {
@@ -78,8 +88,19 @@
     
 }
 
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
 
+    70% {
+        opacity: 0;
+    }
 
+    100% {
+        opacity: 1;
+    }
+}
 
 @media (max-width: 870px) {
     .wrapperTitel h2, .wrapperTitel h3 {
@@ -139,6 +160,4 @@
         border: none;
         cursor: pointer;
     }
-
-   
 }
