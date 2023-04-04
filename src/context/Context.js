@@ -1,8 +1,30 @@
-import React, { useState, createContext } from "react";
+import React, { useState, useEffect, createContext } from "react";
 
 export const AppContext = createContext();
 
 const Context = (props) => {
+  function getWindowDimensions() {
+    const { innerWidth: width, innerHeight: height } = window;
+    return {
+      width,
+      height,
+    };
+  }
+
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions()
+  );
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  console.log(windowDimensions);
   const [animate, setAnimate] = useState({
     x: 0,
     y: 0,
@@ -11,7 +33,7 @@ const Context = (props) => {
 
   const [isInfoBlockShow, setInfoBlockShow] = useState(false);
   const [isProjectsBlockShow, setProjectsBlockShow] = useState(false);
-  const [isMainTitleShow, setMainTitleShow]= useState(true);
+  const [isMainTitleShow, setMainTitleShow] = useState(true);
   const [infoBlock, setInfoBlock] = useState([
     {
       id: 1,
@@ -61,7 +83,7 @@ const Context = (props) => {
     setAnimate({ x: 0, y: 0, rotate: 0 });
     setInfoBlockShow(false);
     setMainTitleShow(true);
-  }
+  };
 
   const showScreen2 = () => {
     setAnimate({
@@ -72,13 +94,13 @@ const Context = (props) => {
     setInfoBlockShow(true);
     setProjectsBlockShow(false);
     setMainTitleShow(false);
-  }
+  };
 
   const showScreen3 = () => {
     setAnimate({ x: 1100, y: -650, rotate: 180 });
     setProjectsBlockShow(true);
     setInfoBlockShow(false);
-  }
+  };
 
   const value = {
     animate,
@@ -92,7 +114,7 @@ const Context = (props) => {
     setMainTitleShow,
     showScreen1,
     showScreen2,
-    showScreen3
+    showScreen3,
   };
 
   return (

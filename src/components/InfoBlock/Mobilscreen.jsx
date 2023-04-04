@@ -33,7 +33,7 @@ const MobilScreen = () => {
 
     return (
         <div >
-            <div className={styles.wrapperTitel}>
+            <div className={styles.wrapperTitle}>
                 <h2>01.</h2><h3>хто ми</h3>
             </div>
             <div className={styles.wrapperMenuButtons}>

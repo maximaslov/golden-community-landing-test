@@ -9,6 +9,20 @@ h1 {
   font-weight: 400;
 }
 
+h2{
+  font-family: 'Jura';
+font-style: normal;
+font-weight: 700;
+font-size: 44px;
+line-height: 52px;
+color: #FFFFFF;
+}
+
+.ringsWrapper {
+  position: fixed;
+  z-index: 9999;
+}
+
 .mainBackground {
   display: flex;
   justify-content: center;
@@ -31,7 +45,6 @@ h1 {
 }
 
 .appWrapper {
-  /* max-width: 1440px; */
   margin: 0 auto;
   position: relative;
   background-color: #1B1509;
@@ -66,4 +79,19 @@ h1 {
   padding: 12px 24px;
   background-color: #BFBFBF;
   border: solid 1px #5D5D5F;
+}
+
+a{
+  color: #E3D18F;
+}
+
+a:hover{
+  color: #ffffff;
+}
+
+@media (max-width: 600px){
+  h2{
+    font-size: 24px;
+    line-height: 150%;
+  }
 }

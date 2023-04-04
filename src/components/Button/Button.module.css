@@ -31,3 +31,12 @@
   background-color: #bfbfbf;
   border: solid 1px #5d5d5f;
 }
+
+@media (max-width: 600px){
+  .mainBtn {
+    padding: 10px 20px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+  }
+}

@@ -4,6 +4,8 @@ import Main from "./components/Main/Main";
 import BackgroundImage from "./components/BackgroundImage/BackgroundImage";
 import { useEffect, useContext } from 'react';
 import { AppContext } from "./context/Context";
+import Rings from './components/Rings/Rings'
+import Registration from "./components/Registration/Registration";
 
 function App() {
 
@@ -11,6 +13,10 @@ function App() {
 
   return (
     <div className="appWrapper">
+      {/* <Registration /> */}
+      <div className={"ringsWrapper"}>
+        <Rings />
+      </div>
       <BackgroundImage />
       <Header />
       <Main />

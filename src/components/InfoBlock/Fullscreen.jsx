@@ -7,7 +7,13 @@ import Button from "../Button/Button";
 const FullScreen = () => {
   
   const data = useContext(AppContext);
-   const [currentBlock, setCurrentBlock] = useState(data.infoBlock[0]);
+  const [currentBlock, setCurrentBlock] = useState(data.infoBlock[0]);
+  const [active, setActive] = useState(0);
+  const clickChange = (e,i) => {
+    setCurrentBlock(e);
+    setActive(i);
+  }
+
  
   const Block = () => {
         return (
@@ -20,14 +26,14 @@ const FullScreen = () => {
      }
   const NavButtons = () => {
         return (
-          data.infoBlock.map((e,i=0) => (<li key={i+1} className={styles.menuItem}><a onClick={() => setCurrentBlock(e)}>
+          data.infoBlock.map((e, i = 0) => (<li key={i + 1} className={styles.menuItem}><a className={active == i ? `${styles.active}` : ''} onClick={() => clickChange(e,i)}>
                {e.title}
               </a></li>)) 
         )
     }
   return (
     <div>
-      <div className={styles.wrapperTitel}>
+      <div className={styles.wrapperTitle}>
         <h2>01.</h2>
         <h3>хто ми</h3>
       </div>

@@ -20,7 +20,7 @@ const InfoBlock = () => {
   return (
     <>
       {data.isInfoBlockShow && (
-        <div className={`${styles.wrapper}`}>
+        <div className={styles.wrapper}>
           {matches && <FullScreen />}
           {!matches && <MobilScreen />}
         </div>

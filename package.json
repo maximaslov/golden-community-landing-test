@@ -1,13 +1,14 @@
 {
   "name": "golden-community-landing",
   "version": "0.1.0",
-  "homepage": "https://maximaslov.github.io/weatherapp",
+  "homepage": "https://maximaslov.github.io/golden-community-landing",
   "private": true,
   "dependencies": {
     "@fullpage/react-fullpage": "^0.1.36",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "formik": "^2.2.9",
     "framer-motion": "^10.0.1",
     "gh-pages": "^5.0.0",
     "react": "^18.2.0",

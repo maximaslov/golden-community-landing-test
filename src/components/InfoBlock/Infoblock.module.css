@@ -7,22 +7,24 @@
     animation: show 2s ease;
     opacity: 1;
 }
-.wrapperTitel{
+
+.wrapperTitle{
     display: flex;
     align-items: flex-end;
 }
-.wrapperTitel h2 {
+
+.wrapperTitle h2 {
     font-family: 'Orbitron';
     font-style: normal;
     font-weight: 400;
     color: #FFFFFF;
 }
-.wrapperTitel h2{
+.wrapperTitle h2{
     font-size: 32px;
     line-height: 40px;
     margin-right: 16px;
 }
-.wrapperTitel h3 {
+.wrapperTitle h3 {
     font-size: 16px;
     line-height: 28px;
     font-family: 'Jura';
@@ -52,14 +54,15 @@
     font-size: 18px;
     padding-bottom: 8px;
     cursor: default;
-    transition: all ease 0.5s;
 }
 
 .menuItem a:hover {
-    border-bottom: 1px solid #E3D18F;
+    color: #E3D18F;
+    transition: all ease 0.5s;
+    cursor: pointer;
 }
 
-.menuItem a:active {
+.active {
     border-bottom: 1px solid #E3D18F;
 }
 
@@ -103,11 +106,11 @@
 }
 
 @media (max-width: 870px) {
-    .wrapperTitel h2, .wrapperTitel h3 {
+    .wrapperTitle h2, .wrapperTitle h3 {
         font-size: 14px;
         line-height: 21px;
         }
-    .wrapperTitel h3 {
+    .wrapperTitle h3 {
         font-family: 'Jura';
     }
     .Block {
@@ -155,6 +158,7 @@
         font-size: 12px;
         position: absolute;
     }
+
     .btnArrow {
         background: none;
         border: none;
