@@ -34,6 +34,7 @@ const Context = (props) => {
   const [isInfoBlockShow, setInfoBlockShow] = useState(false);
   const [isProjectsBlockShow, setProjectsBlockShow] = useState(false);
   const [isMainTitleShow, setMainTitleShow] = useState(true);
+  const [showRings,setShowRings] = useState(false);
   const [infoBlock, setInfoBlock] = useState([
     {
       id: 1,
@@ -83,6 +84,7 @@ const Context = (props) => {
     setAnimate({ x: 0, y: 0, rotate: 0 });
     setInfoBlockShow(false);
     setMainTitleShow(true);
+    setShowRings(false);
   };
 
   const showScreen2 = () => {
@@ -94,12 +96,14 @@ const Context = (props) => {
     setInfoBlockShow(true);
     setProjectsBlockShow(false);
     setMainTitleShow(false);
+    setShowRings(false);
   };
 
   const showScreen3 = () => {
     setAnimate({ x: 1100, y: -650, rotate: 180 });
     setProjectsBlockShow(true);
     setInfoBlockShow(false);
+    setShowRings(true);
   };
 
   const value = {
@@ -112,6 +116,7 @@ const Context = (props) => {
     setProjectsBlockShow,
     isMainTitleShow,
     setMainTitleShow,
+    showRings,
     showScreen1,
     showScreen2,
     showScreen3,

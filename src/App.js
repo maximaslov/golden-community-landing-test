@@ -14,9 +14,7 @@ function App() {
   return (
     <div className="appWrapper">
       {/* <Registration /> */}
-      <div className={"ringsWrapper"}>
-        <Rings />
-      </div>
+      <Rings />
       <BackgroundImage />
       <Header />
       <Main />

@@ -3,8 +3,9 @@
   height: 100vh;
   background: none;
   align-items: center;
-  position: relative;
-  z-index: 9999;
+  position: fixed;
+  z-index: 20;
+  animation: show 1s ease;
 }
 
 .ringsWrapper img {
@@ -214,6 +215,16 @@
 
   .largeRingThirdPlanetSmall {
     left: 13.4%;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opasity: 1;
   }
 }
 

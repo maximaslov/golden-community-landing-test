@@ -3,7 +3,6 @@ import styles from "./BackgroundImage.module.css";
 import Background from "../../images/main-planet.jpg";
 import { motion } from "framer-motion";
 import { AppContext } from "../../context/Context";
-import Rings from "../Rings/Rings";
 
 const BackgroundImage = () => {
   const data = useContext(AppContext);

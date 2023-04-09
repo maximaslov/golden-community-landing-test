@@ -2,8 +2,8 @@ import React, { useContext, useRef, useEffect } from "react";
 import { AppContext } from "../../context/Context";
 import InfoBlock from "../InfoBlock/Infoblock";
 import styles from "./Main.module.css";
-import Section from '../Section/Section';
-import Project from '../Project/Project';
+import Section from "../Section/Section";
+import Project from "../Project/Project";
 
 const Main = () => {
   const data = useContext(AppContext);
@@ -13,19 +13,18 @@ const Main = () => {
 
     const handleScroll = () => {
       const scrollY = element.scrollTop;
-      
+
       if (scrollY >= 250) {
-        data.showScreen2()
+        data.showScreen2();
       }
 
       if (scrollY > 1200) {
-        data.showScreen3()
+        data.showScreen3();
       }
 
       if (scrollY < 250) {
-        data.showScreen1()
+        data.showScreen1();
       }
-
     };
 
     element.addEventListener("scroll", handleScroll);
@@ -36,13 +35,15 @@ const Main = () => {
   return (
     <main className={styles.main} ref={refElement}>
       <Section>
-        {data.isMainTitleShow && <h1 className={styles.mainTitle}>GOLDEN COMMUNITY</h1>}
+        {data.isMainTitleShow && (
+          <h1 className={styles.mainTitle}>GOLDEN COMMUNITY</h1>
+        )}
       </Section>
       <Section>
         <InfoBlock />
       </Section>
       <Section isLeftSection={true}>
-        <Project/>
+        <Project />
       </Section>
     </main>
   );

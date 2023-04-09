@@ -7,6 +7,7 @@
     overflow-y: auto;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+    z-index: 30;
 }
 
 .main::-webkit-scrollbar {
